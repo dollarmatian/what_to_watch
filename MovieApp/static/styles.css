@@ -1,0 +1,108 @@
+h1{
+    font-size:38px;
+    text-align: center;
+
+}
+.nav{
+    justify-content: center
+}
+body{
+    padding:10px;
+}
+#signedIn{
+    text-align: center;
+}
+
+#searchDisplay, #movieCard, #movieView div, #watchlist-div{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+}
+
+#searchDisplay form{
+    margin: 25px 0;
+    display:flex;
+    flex-direction: column;
+}
+
+#searchDisplay label, #commentListDiv li, #addItemComment{
+    margin: 10px auto;
+ }
+#searchDisplay label{
+    margin-top: 25px ;
+}
+#searchSelectionsSubmit{
+    margin-top: 25px
+}
+#movieView p {
+    /* max-width: 60%; */
+    text-align: center;
+}
+#itemComment{
+    resize: none;
+}
+#createComment{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+  
+}
+ul{
+    list-style: none;
+}
+
+.watchlistItem {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width: 40%;
+    border: 1px solid black;
+    border-radius:.25rem;
+    margin: 10px;
+    box-shadow: 4px 3px grey;
+    min-width:425px;
+    height: 375px;
+    padding:10px;
+        
+}
+.item-data{
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    margin:0 10px ;
+}
+.item-headers{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.item-headers div{ 
+    text-align: center
+}
+#watchlist-div{
+    max-width: 100vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+button{
+    margin: 5px;
+
+}
+
+@media screen and (max-width: 1300px) {
+
+#movieCard h4{
+    font-size: 1rem;
+}
+#movieCard h5{
+    font-size: .75rem;
+}
+#movieCard p{
+    font-size: .75rem
+}
+}
+

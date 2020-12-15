@@ -1,0 +1,89 @@
+{% extends "movies/layout.html" %}
+
+{% block body %}
+<div id="searchDisplay">
+  <h3>Select Options for Random Media Choice</h3>
+  
+  <form name="searchSelections" id="searchSelectionsForm" >
+    <label for="countryCodeSearch">Choose Your Country:</label>
+    <select name="countryCodeSearch" id="countryCodeSearch" >
+      <option selected value="33">Canada</option>
+      <option value="78">USA</option>
+      <option value="65">Mexico</option>
+      <option value="46">UK</option>
+      
+    </select>
+    <label for="typeSearch">Choose Type:</label>
+    <select name="typeSearch" id="typeSearch"  >
+      <option value="Movie">Movie</option>
+      <option value="Series">Series</option>
+    </select> 
+    
+    
+    <label for="genreSearch">Choose Genre:</label>
+    <select name="genreSearch" id="genreSearch" >
+      <option selected value="0">Any</option>
+      <option value='801362'}>Action</option>
+      <option value='6548'>Comedy</option>
+      <option value='5763'>Drama</option>
+      <option value='108533'>Sci-Fi</option>
+      <option value='8933'>Thriller</option>
+    </select>
+    <div>
+    <label for="ratingsSearch">Minimum IMDB Rating:
+    <span id="ratingSearchValue"></span></label><br>
+    <input type="range" min='0' max='10'  name="ratingsSearch" id="ratingsSearch"></input>
+  </div> 
+    <div>
+      <label for="age">
+      Minimum Release Date:
+      <span id="releasedSearchValue"></span></label><br>
+      <input id="releasedSearch" type="range" min='1970' max='2015' name="age" style="width:100%"/> 
+      
+    </div>     
+    
+    {% if user.is_authenticated %}
+<input type="submit" id="searchSelectionsSubmit">
+
+{% endif %}
+    </form>
+  </div>
+  <div id="movieCard">
+
+    <div id="movieView">
+      
+    </div> 
+    <div>
+      <a target="_blank" id="watchNow"><button>Watch Now</button></a> 
+      {% if user.is_authenticated %}
+      <button data-itemId="" class="addWatchlistItem"  id="addWatchlistItem">
+      Add to WatchList
+      </button>
+      {% endif %}
+      </div>
+    <div>
+    <div>
+      <ul id="commentListDiv">
+        <h3>User Comments</h3>
+  
+
+    </ul>
+      {% if user.is_authenticated %}
+      <div id="createComment">
+
+        <textarea name="itemComment" id="itemComment" cols="30" rows="5" ></textarea><br>
+        <button data-itemId=""  id="addItemComment">
+          Add Comment
+        </button>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  </div>
+
+  <div >
+    <ul id="watchlist-div">
+
+    </ul>
+  </div>
+{% endblock %}
